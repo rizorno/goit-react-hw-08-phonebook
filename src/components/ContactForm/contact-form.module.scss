@@ -1,45 +1,83 @@
-.form {
-  display: inline-flex;
+.contact-form {
+  max-width: 500px;
+
+  background-color: #e3e3ee;
+
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-between;
 
-  padding: 30px;
-  margin: 0 auto;
+  padding: 20px;
+  margin: 0 auto 20px;
 
-  border: 1px solid darkcyan;
+  border-radius: 5px;
 
-  label {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  box-shadow: 0 3px 3px 0 rgb(0 0 0 / 14%), 0 1px 7px 0 rgb(0 0 0 / 12%),
+    0 3px 1px -2px rgb(0 0 0 / 20%);
+}
 
-    font-weight: 700;
-    text-align: left;
+.contact-label {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+
+  display: block;
+  margin-bottom: 10px;
+}
+
+.contact-input {
+  width: 70%;
+
+  background-color: #e3e3ee;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.25;
+
+  padding: 10px 20px;
+  margin: 0 auto 10px auto;
+
+  border: 0;
+  border-radius: 20px;
+
+  outline: 0;
+  appearance: none;
+
+  box-shadow: inset 2px 2px 5px #a1a6b8, inset -5px -5px 10px #ffffff;
+  transition: all 0.2s ease-in-out;
+
+  @media screen and (min-width: 768px) {
+    width: auto;
+    margin: 0 0 10px 0;
   }
 
-  button {
-    width: 150px;
-    height: 35px;
+  &:focus {
+    box-shadow: inset 1px 1px 2px #a1a6b8, inset -1px -1px 2px #ffffff;
+  }
+}
 
-    font-weight: 700;
-    font-size: 14px;
+.contact-button {
+  width: 150px;
+  height: 35px;
 
-    text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
 
-    border: none;
-    border-radius: 5px;
-    background-color: aquamarine;
+  text-transform: uppercase;
 
-    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 14%), 0 1px 7px 0 rgb(0 0 0 / 12%),
-      0 3px 1px -2px rgb(0 0 0 / 20%);
+  border: none;
+  border-radius: 5px;
+  background-color: aquamarine;
 
-    cursor: pointer;
+  box-shadow: 0 3px 3px 0 rgb(0 0 0 / 14%), 0 1px 7px 0 rgb(0 0 0 / 12%),
+    0 3px 1px -2px rgb(0 0 0 / 20%);
 
-    margin: auto;
+  cursor: pointer;
 
-    &:active {
-      transform: translateY(3px);
-    }
+  margin: auto;
+
+  &:active {
+    transform: translateY(3px);
   }
 }

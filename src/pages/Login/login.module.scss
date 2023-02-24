@@ -1,41 +1,65 @@
 .login-box-wrapper {
-  margin-top: 20px;
-  padding: 10px;
-  min-height: 75vh;
+  padding: 30px;
+  min-height: calc(100vh - 150px);
 }
 
 .login-title {
+  color: rgb(4, 51, 35);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.25;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
 
 .login-form {
-  width: 500px;
+  max-width: 500px;
+
+  background-color: #e3e3ee;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   padding: 20px;
   margin: 0 auto 20px;
+
   border-radius: 5px;
-  background-color: #e3e3ee;
+
   box-shadow: 0 3px 3px 0 rgb(0 0 0 / 14%), 0 1px 7px 0 rgb(0 0 0 / 12%),
     0 3px 1px -2px rgb(0 0 0 / 20%);
 }
 
-.login-field {
-  border: 0;
-  outline: 0;
+.login-label {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+
+  display: block;
+  margin-bottom: 10px;
+}
+
+.login-input {
   width: 70%;
-  margin: 0 auto 10px auto;
-  border-radius: 20px;
-  padding: 10px 20px;
+
   background-color: #e3e3ee;
-  font-size: 16;
+
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.25;
+
+  padding: 10px 20px;
+  margin: 0 auto 10px auto;
+
+  border: 0;
+  border-radius: 20px;
+
+  outline: 0;
+  appearance: none;
+
   box-shadow: inset 2px 2px 5px #a1a6b8, inset -5px -5px 10px #ffffff;
   transition: all 0.2s ease-in-out;
-  appearance: none;
 
   @media screen and (min-width: 768px) {
     width: auto;
@@ -47,22 +71,19 @@
   }
 }
 
-.login-label {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.25;
-  display: block;
-  margin-bottom: 10px;
-}
-
 .login-button {
+  width: 70%;
+
   font-size: 16px;
   font-weight: 700;
   line-height: 1.25;
+  text-transform: uppercase;
+
   padding: 5px;
+  margin: 0 auto;
 
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   background-color: aquamarine;
   border-color: #a1a6b8;
 
@@ -70,8 +91,16 @@
     0 3px 1px -2px rgb(0 0 0 / 20%);
 
   cursor: pointer;
+
+  &:active {
+    transform: translateY(3px);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 }
 
 .link-login {
-  color: #000000;
+  color: rgb(4, 51, 35);
 }

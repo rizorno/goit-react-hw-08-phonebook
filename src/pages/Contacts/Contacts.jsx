@@ -4,9 +4,11 @@ import ContactForm from '../../components/ContactForm/ContactForm';
 import Filter from '../../components/Filter/Filter';
 import ContactList from '../../components/ContactList/ContactList';
 import { fetchContactsThunk } from 'redux/operations';
-import { selectIsLoading, selectError } from 'redux/selectors';
+import { selectContacts, selectIsLoading, selectError } from 'redux/selectors';
+import css from './contacts.module.scss';
 
 const Contacts = () => {
+  const contacts = useSelector(selectContacts).length;
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -15,12 +17,12 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <div className={css['contacts-box']}>
+      <h1 className={css['contacts-title']}>Add contact</h1>
       <ContactForm />
-      <h2>Contacts</h2>
       <Filter />
       {isLoading && !error && <p>Request in progress...</p>}
+      <h2 className={css['contacts-subtitle']}>Total contacts: {contacts}</h2>
       <ContactList />
     </div>
   );

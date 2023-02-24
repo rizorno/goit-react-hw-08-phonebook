@@ -1,0 +1,15 @@
+.nav__link {
+  display: inline-block;
+  color: #290249;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.nav__link--current {
+  display: inline-block;
+  color: #b90b7f;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0 10px;
+}

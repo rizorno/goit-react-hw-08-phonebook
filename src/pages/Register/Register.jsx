@@ -44,43 +44,46 @@ const Register = () => {
   };
 
   return (
-    <div className={css['login-box-wrapper']}>
-      <h1 className={css['login-title']}>Registration Page</h1>
+    <div className={css['register-box-wrapper']}>
+      <h1 className={css['register-title']}>Registration Page</h1>
       <form
-        className={css['login-form']}
+        className={css['register-form']}
         onSubmit={handleSubmit}
         initialValues={initialValues}
       >
-        <label className={css['login-label']}>Name</label>
+        <label className={css['register-label']}>Name</label>
         <input
           type="text"
           name="name"
           value={name}
           onChange={handleChange}
-          className={css['login-field']}
+          className={css['register-input']}
           required
+          placeholder="name..."
           autoComplete="off"
         />
 
-        <label className={css['login-label']}>Email</label>
+        <label className={css['register-label']}>Email</label>
         <input
           type="email"
           name="email"
           value={email}
           onChange={handleChange}
-          className={css['login-field']}
+          className={css['register-input']}
           required
+          placeholder="email..."
           autoComplete="off"
         />
 
-        <label className={css['login-label']}>Password</label>
+        <label className={css['register-label']}>Password</label>
         <input
           type="password"
           name="password"
           value={password}
           onChange={handleChange}
-          className={css['login-field']}
+          className={css['register-input']}
           required
+          placeholder="password..."
           autoComplete="off"
         />
 

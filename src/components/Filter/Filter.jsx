@@ -16,8 +16,10 @@ const Filter = () => {
   const idElement = nanoid();
 
   return (
-    <label className={css.label}>
-      Find contacts by name or by number
+    <div className={css['filter-box']}>
+      <label className={css['filter-label']}>
+        Find contact by name or by number
+      </label>
       <input
         id={idElement}
         onChange={handleFilterContact}
@@ -25,9 +27,11 @@ const Filter = () => {
         name="filter"
         title="Find contacts by name or by number"
         required
+        placeholder="name or number..."
         autoComplete="off"
+        className={css['filter-input']}
       />
-    </label>
+    </div>
   );
 };
 

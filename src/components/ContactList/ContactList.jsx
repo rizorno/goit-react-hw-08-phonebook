@@ -22,24 +22,32 @@ const ContactList = () => {
 
     if (findElementName) {
       return (
-        <li key={id}>
+        <li key={id} className={css['list-item']}>
           <div className={css.box}>
             <p className={css.name}>{name}:</p>
             <p className={css.number}>{number}</p>
           </div>
-          <button type="button" onClick={handleDeleteContact}>
+          <button
+            type="button"
+            onClick={handleDeleteContact}
+            className={css['list-button']}
+          >
             Delete
           </button>
         </li>
       );
     } else if (findElementNumber) {
       return (
-        <li key={id}>
+        <li key={id} className={css['list-item']}>
           <div className={css.box}>
             <p className={css.name}>{name}:</p>
             <p className={css.number}>{number}</p>
           </div>
-          <button type="button" onClick={handleDeleteContact}>
+          <button
+            type="button"
+            onClick={handleDeleteContact}
+            className={css['list-button']}
+          >
             Delete
           </button>
         </li>
@@ -47,7 +55,7 @@ const ContactList = () => {
     }
   });
 
-  return <ul>{elements}</ul>;
+  return <ul className={css['list-box']}>{elements}</ul>;
 };
 
 export default ContactList;

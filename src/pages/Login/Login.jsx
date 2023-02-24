@@ -50,9 +50,11 @@ const Login = () => {
           type="email"
           name="email"
           value={email}
-          className={css['login-field']}
+          className={css['login-input']}
           onChange={handleChange}
+          autoComplete="off"
           required
+          placeholder="email..."
         />
 
         <label className={css['login-label']}>Password</label>
@@ -60,10 +62,13 @@ const Login = () => {
           type="password"
           name="password"
           value={password}
-          className={css['login-field']}
+          className={css['login-input']}
           onChange={handleChange}
+          autoComplete="off"
           required
+          placeholder="password..."
         />
+
         <button
           className={css['login-button']}
           type="submit"

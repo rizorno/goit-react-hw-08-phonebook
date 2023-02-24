@@ -3,6 +3,7 @@ import { NavLink, useNavigate, Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getUserThunk, logOutThunk } from 'redux/auth/authOperations';
 import { selectToken, selectUserName } from 'redux/selectors';
+import Footer from '../Footer/Footer';
 import css from './shared-layout.module.scss';
 
 const SharedLayout = () => {
@@ -25,33 +26,52 @@ const SharedLayout = () => {
 
   return (
     <>
-      <div position="static" className={css['wrapper']}>
-        <div className={css['box-layout']}>
-          <h1 className={css['layout-title']}>
-            {userName ? `${userName}'s Phonebook` : 'PhoneBook Service'}
-          </h1>
+      <header position="static" className={css['wrapper']}>
+        <nav className={css['box-layout']}>
+          <h2 className={css['nav-title']}>
+            {userName ? `${userName}'s phonebook ☎️` : 'PhoneBook ☎️'}
+          </h2>
           {token ? (
-            <>
-              <NavLink to="/contacts" className={css['layout-link-login']}>
+            <div className={css['nav__box']}>
+              <NavLink
+                to="/contacts"
+                className={({ isActive }) =>
+                  isActive ? css['nav__link--current'] : css['nav__link']
+                }
+              >
                 Contacts
               </NavLink>
               <button onClick={logOuthandler} className={css['layout-button']}>
                 Log out
               </button>
-            </>
+            </div>
           ) : (
-            <>
-              <NavLink to="/login" className={css['layout-link-login']}>
+            <div className={css['nav__box']}>
+              <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  isActive ? css['nav__link--current'] : css['nav__link']
+                }
+              >
                 Log in
               </NavLink>
-              <NavLink to="/register" className={css['layout-link']}>
+              <NavLink
+                to="/register"
+                className={({ isActive }) =>
+                  isActive ? css['nav__link--current'] : css['nav__link']
+                }
+              >
                 Register
               </NavLink>
-            </>
+            </div>
           )}
-        </div>
-      </div>
+        </nav>
+      </header>
       <Outlet />
+
+      <div className={css['layout-wrapper']}>
+        <Footer />
+      </div>
     </>
   );
 };

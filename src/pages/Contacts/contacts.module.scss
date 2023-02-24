@@ -1,0 +1,21 @@
+.contacts-box {
+  padding: 30px;
+  min-height: calc(100vh - 150px);
+  padding-bottom: 80px;
+}
+
+.contacts-title,
+.contacts-subtitle {
+  color: rgb(4, 51, 35);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  margin: 0 auto 20px;
+}
+
+.contacts-subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 20px;
+}
