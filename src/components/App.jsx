@@ -5,10 +5,12 @@ import { Route, Routes } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import PublicRoute from './PublicRoute/PublicRoute';
 import SharedLayout from './SharedLayout/SharedLayout';
+import Home from '../pages/Home/Home';
 
 export const App = () => {
   return (
     <Routes>
+      <Route path="/" element={<Home />} />
       <Route path="/" element={<SharedLayout />}>
         <Route
           path="/contacts"

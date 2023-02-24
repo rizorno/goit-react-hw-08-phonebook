@@ -28,9 +28,11 @@ const SharedLayout = () => {
     <>
       <header position="static" className={css['wrapper']}>
         <nav className={css['box-layout']}>
-          <h2 className={css['nav-title']}>
-            {userName ? `${userName}'s phonebook ☎️` : 'PhoneBook ☎️'}
-          </h2>
+          <NavLink to="/" className={css['nav-logo']}>
+            <h2 className={css['nav-title']}>
+              {userName ? `${userName}'s phonebook ☎️` : 'PhoneBook ☎️'}
+            </h2>
+          </NavLink>
           {token ? (
             <div className={css['nav__box']}>
               <NavLink
