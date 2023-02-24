@@ -55,7 +55,7 @@ const ContactList = () => {
     }
   });
 
-  return <ul className={css['list-box']}>{elements}</ul>;
+  return <ol className={css['list-box']}>{elements}</ol>;
 };
 
 export default ContactList;
