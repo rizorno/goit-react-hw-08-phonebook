@@ -1,7 +1,7 @@
 import { loginThunk } from 'redux/auth/authOperations';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import css from './login.module.scss';
 
 const initialValues = {
@@ -70,6 +70,9 @@ const Login = () => {
           children="Login"
         />
       </form>
+      <NavLink to="/register" className={css['link-login']}>
+        Don't have an account? Register
+      </NavLink>
     </div>
   );
 };
