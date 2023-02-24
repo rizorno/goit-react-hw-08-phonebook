@@ -21,7 +21,7 @@ const Contacts = () => {
       <h1 className={css['contacts-title']}>Add contact</h1>
       <ContactForm />
       <Filter />
-      {isLoading && !error && <p>Request in progress...</p>}
+      {isLoading && !error && <></>}
       <h2 className={css['contacts-subtitle']}>Total contacts: {contacts}</h2>
       <ContactList />
     </div>
