@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { selectContacts } from '../../redux/selectors';
-import { addContact } from '../../redux/operations';
+import { addContactThunk } from '../../redux/operations';
 import css from './contact-form.module.scss';
 
 const ContactForm = () => {
@@ -21,14 +21,16 @@ const ContactForm = () => {
     }
 
     const messageNumber = contacts.find(
-      element => element.phone === form.number.value
+      element => element.number === form.number.value
     );
     if (messageNumber) {
       alert(`${messageNumber.number} is already in contacts!`);
       return;
     }
 
-    dispatch(addContact({ name: form.name.value, phone: form.number.value }));
+    dispatch(
+      addContactThunk({ name: form.name.value, number: form.number.value })
+    );
     form.reset();
   };
 

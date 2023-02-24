@@ -1,26 +1,25 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import ContactForm from './ContactForm/ContactForm';
-import Filter from './Filter/Filter';
-import ContactList from './ContactList/ContactList';
-import { fetchContacts } from '../redux/operations';
-import { selectError, selectIsLoading } from '../redux/selectors';
+import Contacts from 'pages/Contacts/Contacts';
+import Login from 'pages/Login/Login';
+import Register from 'pages/Register/Register';
+import { Route, Routes } from 'react-router-dom';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import PublicRoute from './PublicRoute/PublicRoute';
+import SharedLayout from './SharedLayout/SharedLayout';
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
   return (
-    <div>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <h2>Contacts</h2>
-      <Filter />
-      {isLoading && !error && <p>Request in progress...</p>}
-      <ContactList />
-    </div>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route
+          path="/contacts"
+          element={<PrivateRoute component={<Contacts />} />}
+        />
+        <Route
+          path="/register"
+          element={<PublicRoute component={<Register />} />}
+        />
+        <Route path="/login" element={<PublicRoute component={<Login />} />} />
+      </Route>
+    </Routes>
   );
 };
