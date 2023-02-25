@@ -1,11 +1,11 @@
-import Contacts from 'pages/Contacts/Contacts';
-import Login from 'pages/Login/Login';
-import Register from 'pages/Register/Register';
 import { Route, Routes } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import PublicRoute from './PublicRoute/PublicRoute';
 import SharedLayout from './SharedLayout/SharedLayout';
 import Home from '../pages/Home/Home';
+import Contacts from 'pages/Contacts/Contacts';
+import Login from 'pages/Login/Login';
+import Register from 'pages/Register/Register';
 
 export const App = () => {
   return (

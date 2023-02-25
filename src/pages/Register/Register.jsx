@@ -5,12 +5,6 @@ import { signUpThunk } from 'redux/auth/authOperations';
 import { NavLink } from 'react-router-dom';
 import css from './register.module.scss';
 
-const initialValues = {
-  name: '',
-  number: '',
-  filter: '',
-};
-
 const Register = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
@@ -46,11 +40,7 @@ const Register = () => {
   return (
     <div className={css['register-box-wrapper']}>
       <h1 className={css['register-title']}>Registration Page</h1>
-      <form
-        className={css['register-form']}
-        onSubmit={handleSubmit}
-        initialValues={initialValues}
-      >
+      <form className={css['register-form']} onSubmit={handleSubmit}>
         <label className={css['register-label']}>Name</label>
         <input
           type="text"

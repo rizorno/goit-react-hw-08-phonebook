@@ -4,12 +4,6 @@ import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import css from './login.module.scss';
 
-const initialValues = {
-  name: '',
-  number: '',
-  filter: '',
-};
-
 const Login = () => {
   const dispatch = useDispatch();
 
@@ -43,7 +37,6 @@ const Login = () => {
         className={css['login-form']}
         autoComplete="off"
         onSubmit={handleSubmit}
-        initialValues={initialValues}
       >
         <label className={css['login-label']}>Email</label>
         <input

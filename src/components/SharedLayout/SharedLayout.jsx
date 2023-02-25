@@ -69,6 +69,7 @@ const SharedLayout = () => {
           )}
         </nav>
       </header>
+
       <Outlet />
 
       <div className={css['layout-wrapper']}>
