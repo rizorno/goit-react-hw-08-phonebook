@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate, Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -70,11 +71,13 @@ const SharedLayout = () => {
         </nav>
       </header>
 
-      <Outlet />
+      <Suspense follback={<div className={css['box-loading']}>Loading...</div>}>
+        <Outlet />
 
-      <div className={css['layout-wrapper']}>
-        <Footer />
-      </div>
+        <div className={css['layout-wrapper']}>
+          <Footer />
+        </div>
+      </Suspense>
     </>
   );
 };

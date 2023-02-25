@@ -1,11 +1,13 @@
-import { Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import PublicRoute from './PublicRoute/PublicRoute';
 import SharedLayout from './SharedLayout/SharedLayout';
 import Home from '../pages/Home/Home';
-import Contacts from 'pages/Contacts/Contacts';
-import Login from 'pages/Login/Login';
-import Register from 'pages/Register/Register';
+
+const Contacts = lazy(() => import('pages/Contacts/Contacts'));
+const Login = lazy(() => import('pages/Login/Login'));
+const Register = lazy(() => import('pages/Register/Register'));
 
 export const App = () => {
   return (
@@ -22,6 +24,7 @@ export const App = () => {
         />
         <Route path="/login" element={<PublicRoute component={<Login />} />} />
       </Route>
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
 };
