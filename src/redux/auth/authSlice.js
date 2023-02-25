@@ -6,6 +6,15 @@ import {
   signUpThunk,
 } from './authOperations';
 
+const handlePending = state => {
+  state.isLoading = true;
+};
+
+const handleRejected = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
+};
+
 const initialState = {
   isLoading: false,
   error: null,
@@ -19,58 +28,38 @@ export const authSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
-      .addCase(signUpThunk.pending, state => {
-        state.isLoading = true;
-      })
+      .addCase(signUpThunk.pending, handlePending)
       .addCase(signUpThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
         state.user = payload.user;
         state.token = payload.token;
       })
-      .addCase(signUpThunk.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        state.error = payload;
-      })
+      .addCase(signUpThunk.rejected, handleRejected)
 
-      .addCase(loginThunk.pending, state => {
-        state.isLoading = true;
-      })
+      .addCase(loginThunk.pending, handlePending)
       .addCase(loginThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
         state.user = payload.user;
         state.token = payload.token;
       })
-      .addCase(loginThunk.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        state.error = payload;
-      })
-      .addCase(getUserThunk.pending, state => {
-        state.isLoading = true;
-      })
+      .addCase(loginThunk.rejected, handleRejected)
+      .addCase(getUserThunk.pending, handlePending)
       .addCase(getUserThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
         state.user = payload;
       })
-      .addCase(getUserThunk.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        state.error = payload;
-      })
-      .addCase(logOutThunk.pending, state => {
-        state.isLoading = true;
-      })
+      .addCase(getUserThunk.rejected, handleRejected)
+      .addCase(logOutThunk.pending, handlePending)
       .addCase(logOutThunk.fulfilled, state => {
         state.isLoading = false;
         state.error = null;
         state.token = null;
         state.user = null;
       })
-      .addCase(logOutThunk.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        state.error = payload;
-      });
+      .addCase(logOutThunk.rejected, handleRejected);
   },
 });
 
