@@ -25,6 +25,11 @@ export const selectFindElementName = createSelector(
 export const selectFindElementNumber = createSelector(
   [selectSortContacts, selectFilter],
   (contacts, filter) => {
-    return contacts.filter(element => element.number.includes(filter));
+    const phone = String(parseInt(filter.replace(/[^\d]/g, '')));
+    const result = contacts.filter(element => {
+      const x = String(parseInt(element.number.replace(/[^\d]/g, '')));
+      return x.includes(phone);
+    });
+    return result;
   }
 );
