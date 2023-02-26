@@ -4,13 +4,21 @@ import ContactForm from '../../components/ContactForm/ContactForm';
 import Filter from '../../components/Filter/Filter';
 import ContactList from '../../components/ContactList/ContactList';
 import { fetchContactsThunk } from 'redux/operations';
-import { selectContacts, selectIsLoading, selectError } from 'redux/selectors';
+import {
+  selectContacts,
+  selectIsLoading,
+  selectError,
+  selectFindElementName,
+  selectFindElementNumber,
+} from 'redux/selectors';
 import css from './contacts.module.scss';
 
 const Contacts = () => {
-  const contacts = useSelector(selectContacts).length;
-  const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
+  const filterName = useSelector(selectFindElementName);
+  const filterNumber = useSelector(selectFindElementNumber);
   const isLoading = useSelector(selectIsLoading);
+  const dispatch = useDispatch();
   const error = useSelector(selectError);
   useEffect(() => {
     dispatch(fetchContactsThunk());
@@ -22,7 +30,12 @@ const Contacts = () => {
       <ContactForm />
       <Filter />
       {isLoading && !error && <></>}
-      <h2 className={css['contacts-subtitle']}>Total contacts: {contacts}</h2>
+      <h2 className={css['contacts-subtitle']}>
+        Total contacts:{' '}
+        {filterName.length || filterNumber.length >= 0
+          ? filterName.length || filterNumber.length
+          : contacts.length}
+      </h2>
       <ContactList />
     </div>
   );

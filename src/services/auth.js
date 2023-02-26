@@ -31,6 +31,7 @@ export const logOutService = async () => {
 
 export const getContacts = async () => {
   const { data } = await privateApi.get('contacts');
+  //   console.log(data);
   return data;
 };
 
