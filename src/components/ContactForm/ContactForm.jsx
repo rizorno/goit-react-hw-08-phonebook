@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { selectContacts } from '../../redux/selectors';
 import { addContactThunk } from '../../redux/operations';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import css from './contact-form.module.scss';
 
 const ContactForm = () => {
@@ -16,7 +17,7 @@ const ContactForm = () => {
       element => element.name === form.name.value
     );
     if (messageName) {
-      alert(`${messageName.name} is already in contacts!`);
+      Notify.failure(`${messageName.name} is already in contacts!`);
       return;
     }
 
@@ -24,13 +25,14 @@ const ContactForm = () => {
       element => element.number === form.number.value
     );
     if (messageNumber) {
-      alert(`${messageNumber.number} is already in contacts!`);
+      Notify.failure(`${messageNumber.number} is already in contacts!`);
       return;
     }
 
     dispatch(
       addContactThunk({ name: form.name.value, number: form.number.value })
     );
+    Notify.success('The contact has been successfully added.');
     form.reset();
   };
 

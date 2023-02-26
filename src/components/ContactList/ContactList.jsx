@@ -4,6 +4,7 @@ import {
   selectFindElementNumber,
 } from '../../redux/selectors';
 import { deleteContactThunk } from '../../redux/operations';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import css from './contact-list.module.scss';
 
 const ContactList = () => {
@@ -18,6 +19,7 @@ const ContactList = () => {
 
     const handleDeleteContact = () => {
       dispatch(deleteContactThunk(id));
+      Notify.success('The contact has been successfully deleted.');
     };
 
     return (

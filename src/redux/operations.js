@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
+  token,
+  getContacts,
   addContact,
   deleteContact,
-  getContacts,
-  token,
 } from '../services/auth';
 
 export const fetchContactsThunk = createAsyncThunk(
