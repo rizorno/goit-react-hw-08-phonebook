@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.62348d04.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.5ac86030.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.b584d0df.js",
     "static/css/392.0298bfdf.chunk.css": "/goit-react-hw-08-phonebook/static/css/392.0298bfdf.chunk.css",
-    "static/js/392.a465cadb.chunk.js": "/goit-react-hw-08-phonebook/static/js/392.a465cadb.chunk.js",
+    "static/js/392.cf02274c.chunk.js": "/goit-react-hw-08-phonebook/static/js/392.cf02274c.chunk.js",
     "static/css/513.71cc8725.chunk.css": "/goit-react-hw-08-phonebook/static/css/513.71cc8725.chunk.css",
     "static/js/513.b2833f71.chunk.js": "/goit-react-hw-08-phonebook/static/js/513.b2833f71.chunk.js",
     "static/css/508.3baf4977.chunk.css": "/goit-react-hw-08-phonebook/static/css/508.3baf4977.chunk.css",
     "static/js/508.2129941b.chunk.js": "/goit-react-hw-08-phonebook/static/js/508.2129941b.chunk.js",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.62348d04.css.map": "/goit-react-hw-08-phonebook/static/css/main.62348d04.css.map",
-    "main.5ac86030.js.map": "/goit-react-hw-08-phonebook/static/js/main.5ac86030.js.map",
+    "main.b584d0df.js.map": "/goit-react-hw-08-phonebook/static/js/main.b584d0df.js.map",
     "392.0298bfdf.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/392.0298bfdf.chunk.css.map",
-    "392.a465cadb.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/392.a465cadb.chunk.js.map",
+    "392.cf02274c.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/392.cf02274c.chunk.js.map",
     "513.71cc8725.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/513.71cc8725.chunk.css.map",
     "513.b2833f71.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/513.b2833f71.chunk.js.map",
     "508.3baf4977.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/508.3baf4977.chunk.css.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.62348d04.css",
-    "static/js/main.5ac86030.js"
+    "static/js/main.b584d0df.js"
   ]
 }
