@@ -4,6 +4,7 @@ import {
   selectFindElementNumber,
 } from '../../redux/selectors';
 import { deleteContactThunk } from '../../redux/operations';
+import { setChange } from '../../redux/changeSlice';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import css from './contact-list.module.scss';
 
@@ -22,6 +23,10 @@ const ContactList = () => {
       Notify.success('The contact has been successfully deleted.');
     };
 
+    const handleGetContact = () => {
+      dispatch(setChange({ id, name, number }));
+    };
+
     return (
       <li key={id} className={css['list-item']}>
         <div className={css.box}>
@@ -30,8 +35,15 @@ const ContactList = () => {
         </div>
         <button
           type="button"
+          onClick={handleGetContact}
+          className={css['list-button-change']}
+        >
+          Change
+        </button>
+        <button
+          type="button"
           onClick={handleDeleteContact}
-          className={css['list-button']}
+          className={css['list-button-delete']}
         >
           Delete
         </button>

@@ -7,6 +7,9 @@ const HomePage = () => (
   <>
     <div className={css['home-container']}>
       <h1 className={css['home-title']}>PhoneBook ☎️</h1>
+      <h2 className={css['home-subtitle']}>
+        Your personal phonebook where you can add, change and delete contacts!
+      </h2>
       <Link to="/register" className={css['home-link']}>
         Don't have an account?
       </Link>

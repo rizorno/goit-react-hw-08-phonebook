@@ -44,3 +44,8 @@ export const deleteContact = async contactId => {
   const { data } = await privateApi.delete(`contacts/${contactId}`);
   return data;
 };
+
+export const changeContact = async (contactId, contact) => {
+  const { data } = await privateApi.patch(`contacts/${contactId}`, contact);
+  return data;
+};

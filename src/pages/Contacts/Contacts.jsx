@@ -12,6 +12,7 @@ import {
   selectFindElementNumber,
 } from 'redux/selectors';
 import css from './contacts.module.scss';
+import ChangeContact from '../../components/ChangeContact/ChangeContact';
 
 const Contacts = () => {
   const contacts = useSelector(selectContacts);
@@ -28,14 +29,15 @@ const Contacts = () => {
     <div className={css['contacts-box']}>
       <h1 className={css['contacts-title']}>Add contact</h1>
       <ContactForm />
+      <ChangeContact />
       <Filter />
       {isLoading && !error && <></>}
-      <h2 className={css['contacts-subtitle']}>
+      <h3 className={css['contacts-subtitle']}>
         Total contacts:{' '}
         {filterName.length || filterNumber.length >= 0
           ? filterName.length || filterNumber.length
           : contacts.length}
-      </h2>
+      </h3>
       <ContactList />
     </div>
   );

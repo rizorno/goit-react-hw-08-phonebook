@@ -4,6 +4,7 @@ import {
   getContacts,
   addContact,
   deleteContact,
+  changeContact,
 } from '../services/auth';
 
 export const fetchContactsThunk = createAsyncThunk(
@@ -34,6 +35,17 @@ export const deleteContactThunk = createAsyncThunk(
   async (contactId, thunkAPI) => {
     try {
       return await deleteContact(contactId);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const changeContactThunk = createAsyncThunk(
+  'contacts/changeContact',
+  async ({ contactId, contact }, thunkAPI) => {
+    try {
+      return await changeContact(contactId, contact);
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

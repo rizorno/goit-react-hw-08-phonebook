@@ -37,12 +37,13 @@
       margin: 0;
 
       @media screen and (min-width: 768px) {
-        min-width: 180px;
+        min-width: 170px;
       }
     }
   }
 
-  .list-button {
+  .list-button-delete,
+  .list-button-change {
     width: 100px;
     height: 35px;
 
@@ -68,4 +69,12 @@
       transform: translateY(3px);
     }
   }
+}
+
+.list-button-delete {
+  background-color: rgb(242, 161, 174);
+}
+
+.list-button-change {
+  background-color: rgb(235, 242, 161);
 }

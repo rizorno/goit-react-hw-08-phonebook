@@ -3,6 +3,7 @@ import {
   fetchContactsThunk,
   addContactThunk,
   deleteContactThunk,
+  changeContactThunk,
 } from './operations';
 
 const handlePending = state => {
@@ -48,7 +49,15 @@ const contactsSlice = createSlice({
         state.error = null;
         state.items = state.items.filter(contact => contact.id !== payload.id);
       })
-      .addCase(deleteContactThunk.rejected, handleRejected);
+      .addCase(deleteContactThunk.rejected, handleRejected)
+      .addCase(changeContactThunk.pending, handlePending)
+      .addCase(changeContactThunk.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = state.items.filter(contact => contact.id !== payload.id);
+        state.items.push(payload);
+      })
+      .addCase(changeContactThunk.rejected, handleRejected);
   },
 });
 

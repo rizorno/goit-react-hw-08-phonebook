@@ -9,6 +9,8 @@ export const selectError = state => state.contacts.error;
 export const selectToken = state => state.auth.token;
 export const selectUserName = state => state.auth.user?.name;
 
+export const selectChange = state => state.change;
+
 export const selectSortContacts = createSelector([selectContacts], contacts => {
   return [...contacts].sort((a, b) => a.name.localeCompare(b.name));
 });
@@ -30,6 +32,15 @@ export const selectFindElementNumber = createSelector(
       const x = String(parseInt(element.number.replace(/[^\d]/g, '')));
       return x.includes(phone);
     });
+    return result;
+  }
+);
+
+export const selectChangeElement = createSelector(
+  [selectContacts, selectChange],
+  (contacts, change) => {
+    const elementId = change.id;
+    const result = contacts.find(contact => contact.id === elementId);
     return result;
   }
 );
