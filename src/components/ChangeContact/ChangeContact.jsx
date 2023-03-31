@@ -4,8 +4,8 @@ import { createPortal } from 'react-dom';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { selectChange, selectChangeElement } from '../../redux/selectors';
 import { setChange } from '../../redux/changeSlice';
-import css from './change-contact.module.scss';
 import { changeContactThunk } from 'redux/operations';
+import css from './change-contact.module.scss';
 
 const ChangeContact = () => {
   const change = useSelector(selectChange);
@@ -75,7 +75,7 @@ const ChangeContact = () => {
           aria-label="Close"
           onClick={closeBtnEscBackdrop}
         />
-        />
+
         <form className={css['change-form']} onSubmit={onSubmitForm}>
           <label className={css['change-label']}>Name</label>
           <input
