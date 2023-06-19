@@ -71,7 +71,7 @@ const SharedLayout = () => {
         </nav>
       </header>
 
-      <Suspense follback={<div className={css['box-loading']}>Loading...</div>}>
+      <Suspense fallback={<div className={css['box-loading']}>Loading...</div>}>
         <Outlet />
 
         <div className={css['layout-wrapper']}>
